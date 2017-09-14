@@ -214,6 +214,16 @@ div#container:hover {
     border-left: 0px;
   }
 
+  #p1::after {
+    content: " is a very delicious food to eat everyday for dinner."
+  }
+  #p2::after {
+    content: " is a very delicious food to eat everyday for dinner."
+  }
+  #p3::after {
+    content: " is a very delicious food to eat everyday for dinner."
+  }
+
   #content {
     margin-top: 15px !important;
   }
