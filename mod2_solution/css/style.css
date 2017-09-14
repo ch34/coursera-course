@@ -207,4 +207,10 @@ div#container:hover {
     margin-left: 5%;
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  p {
+    float:none;
+    text-align: center;
+    border-left: 0px;
+  }
 }
