@@ -7,6 +7,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  display: none;
+}
+
 div#container {
   border: 5px solid black;
   background-color: #D3D3D3;
@@ -14,14 +18,18 @@ div#container {
   height: 150px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 15px;
   font-family: Helvetica;
   color: white;
+  padding-bottom: 10px;
+  overflow: hidden;
 }
 
 p {
   border: 5px solid black;
   float: right;
   margin-top: 0px;
+  margin-bottom: 0px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 20px;
@@ -29,6 +37,8 @@ p {
   border-top: 0px;
   border-right: 0px;
   position: relative;
+  top: 0;
+  left: 0;
 }
 
 #p1 {
@@ -39,6 +49,18 @@ p {
 }
 #p3 {
   background-color: #3498DB;
+}
+
+div#content {
+  margin-top: 35px;
+  padding: 10px;
+  color: black;
+
+}
+
+div#container:hover {
+  overflow: auto;
+  cursor:s-resize
 }
 
 /* Simple Responsive Framework. */
@@ -175,5 +197,14 @@ p {
   }
   .col-sm-12 {
     width: 100%;
+  }
+
+  h1 {
+    display: none;
+  }
+  h2 {
+    display: block;
+    margin-left: 5%;
+    font-family: Arial, Helvetica, sans-serif;
   }
 }
