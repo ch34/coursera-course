@@ -1,0 +1,30 @@
+#section1 {
+  background-color: #f6b319;
+  height: 700px;
+  padding: 20px;
+  margin: 10px;
+}
+
+#section2 {
+  background-color: #2ECC71;
+  height: 700px;
+  padding: 20px;
+  margin: 10px;
+}
+
+#section3 {
+  background-color: #CB4335;
+  height: 700px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.h3 {
+  margin-top: 0px !important;
+}
+
+.bottom-align-text {
+  position: absolute;
+  bottom: 15px;
+  left: 30px;
+}
