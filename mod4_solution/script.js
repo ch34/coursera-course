@@ -63,4 +63,20 @@ WARNING!!! WARNING!!!
       window.helloSpeaker.speak(names[i]);
     }
   }
+
+  function createGreeting (name) {
+    var firstLetter = name.charAt(0).toLowerCase();
+    if (firstLetter == 'j') {
+      return window.byeSpeaker.speakSimple(name);
+    } else {
+      return window.helloSpeaker.speakSimple(name);
+    }
+  }
+
+  var greetings = names.map(createGreeting);
+
+  for (var j = 0; j < greetings.length; j++) {
+    console.log(greetings[j]);
+  }
+
 })(window);
