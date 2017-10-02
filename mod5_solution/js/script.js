@@ -22,6 +22,7 @@ var menuItemsUrl =
   "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
+var aboutHtmlUrl = "snippets/about-snippet.html";
 
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
@@ -338,6 +339,32 @@ function insertItemPortionName(html,
   portionValue = "(" + portionValue + ")";
   html = insertProperty(html, portionPropName, portionValue);
   return html;
+}
+
+// source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#Getting_a_random_number_between_two_values
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+}
+
+function buildAndShowAboutHTML () {
+
+  // Load home snippet page
+  $ajaxUtils.sendGetRequest(
+    aboutHtmlUrl,
+    function (aboutHtml) {
+
+      var randNumber = getRandomIntInclusive(1,5);
+      var aboutHtmlToInsertIntoMainPage = "";
+      for(var i = 0; i < randNumber; i++) {
+        var placeholder = "classX";
+        aboutHtmlToInsertIntoMainPage += insertProperty(aboutHtml, placeholder, chosenCategoryShortName);
+      }
+      insertHtml("#main-content", aboutHtmlToInsertIntoMainPage);
+
+    },
+    false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
 
 
