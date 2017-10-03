@@ -341,6 +341,13 @@ function insertItemPortionName(html,
   return html;
 }
 
+dc.loadAbout = function () {
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    aboutHtmlUrl,
+    buildAndShowAboutHTML, false);
+};
+
 // source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#Getting_a_random_number_between_two_values
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -356,10 +363,19 @@ function buildAndShowAboutHTML () {
     function (aboutHtml) {
 
       var randNumber = getRandomIntInclusive(1,5);
+      var classValue = "";
       var aboutHtmlToInsertIntoMainPage = "";
-      for(var i = 0; i < randNumber; i++) {
-        var placeholder = "classX";
-        aboutHtmlToInsertIntoMainPage += insertProperty(aboutHtml, placeholder, chosenCategoryShortName);
+      var counter = randNumber;
+      for(var i = 0; i < 5; i++) {
+        var placeholder = "class" + (i+1);
+
+        if(counter > 0) {
+          classValue = "fa fa-star";
+        } else {
+          classValue = "fa fa-star-o";
+        }
+        aboutHtmlToInsertIntoMainPage += insertProperty(aboutHtml, placeholder, classValue);
+        counter--;
       }
       insertHtml("#main-content", aboutHtmlToInsertIntoMainPage);
 
