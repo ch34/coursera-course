@@ -374,9 +374,10 @@ function buildAndShowAboutHTML () {
         } else {
           classValue = "fa fa-star-o";
         }
-        aboutHtmlToInsertIntoMainPage += insertProperty(aboutHtml, placeholder, classValue);
+        aboutHtml = insertProperty(aboutHtml, placeholder, classValue);
         counter--;
       }
+      aboutHtmlToInsertIntoMainPage += insertProperty(aboutHtml, "ratingNumber", randNumber);
       insertHtml("#main-content", aboutHtmlToInsertIntoMainPage);
 
     },
